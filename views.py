@@ -21,7 +21,7 @@ def analyzed(request):
         for char in djtext:
             if char not in djunwant:
                 analyzed = analyzed + char
-
+        n=len(analyzed)
         params = {'purpose': 'remove unwanted text', 'analyze_text': analyzed,'length': n}
         djtext=analyzed
         #return render(request,'index.html',params)
