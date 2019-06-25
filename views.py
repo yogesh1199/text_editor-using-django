@@ -30,7 +30,7 @@ def analyzed(request):
         analyzed=""
         for char in djtext:
             analyzed=analyzed+char.upper()
-
+        n=len(analyzed)
         params={'purpose':'convert to capitle','analyze_text': analyzed,'length': n}
 
         djtext=analyzed
@@ -41,7 +41,7 @@ def analyzed(request):
         for char in djtext:
             if char != "\n":
                 analyzed = analyzed + char
-
+        n=len(analyzed)
         #print("pre", analyzed)
         params = {'purpose': 'Removed NewLines', 'analyze_text': analyzed,'length': n}
         djtext = analyzed
@@ -56,7 +56,7 @@ def analyzed(request):
                 analyzed = analyzed + char
 
 
-
+        n=len(analyzed)
         params = {'purpose': 'Removed NewLines' ,'analyze_text': analyzed,'length': n}
         djtext=analyzed
         # Analyze the text
