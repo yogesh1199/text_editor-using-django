@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style='background-image: linear-gradient(60deg,white,red)'>
+<center>
+<h1> welcome to text editor</h1>
+
+<form action="/analyzed" method="post">{% csrf_token %}
+    <textarea name="text"  style="height:100px;width:50%"></textarea>
+    <h2>enter text you want to remove</h2>
+    <textarea name="unwanted_text"  style="height:100px;width:50%"></textarea>
+    <br>
+    <input type="checkbox" name="cheak"> remove unwanted text<br>
+    <input type="checkbox" name="caps">convert to uppercase<br>
+    <input type="checkbox" name="newline">remove newline<br>
+    <input type="checkbox" name="space">extra space remover<br>
+    <button type="submit">analyze text</button>
+</form>
+<h2>length of text is {{length}}</h2>
+
+    <h1>your text is here</h1>
+
+<div class="jumbotron">
+    <p>
+    {{analyze_text}}
+</p>
+</div>
+</center>
+</body>
+</html>
